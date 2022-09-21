@@ -8,6 +8,11 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.printf("%s%n",Account.capitalize("stanisŁaw maruSARz"));
+        System.out.println(Account.translit("Дамиан Łубкощски"));
+        System.out.println(Account.translit("Пиотр Гоłąбек"));
+        System.out.println(Account.translit("Томек Щлизло"));
+        System.out.println(Account.translit("Марцин Элеń"));
+        System.out.println(Account.translit("Мариусз Пыза"));
+
     }
 }
