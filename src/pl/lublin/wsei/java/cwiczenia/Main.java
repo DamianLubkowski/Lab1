@@ -1,15 +1,16 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.printf("arg\tlog2(arg)\tsum(arg)\n");
-
-        int sum = 0;
-
-        for (int i = 1; i <= 2048; i*=2) {
-            sum += i;
-            System.out.printf("%d\t%.0f\t%d\n", i, Math.log(i) / Math.log(2), sum);
-        }
+        Scanner input = new Scanner(System.in);
+        int num1, num2;
+        System.out.print("Podaj pierwszą liczbę: ");
+        num1 = input.nextInt();
+        System.out.print("Podaj drugą liczbę: ");
+        num2 = input.nextInt();
+        System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1+num2);
     }
 }
