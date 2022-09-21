@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static String leftPad(String aText, char aChar, int aWidth)
+    public String leftPad(String aText, char aChar, int aWidth)
     {
         String res = aText;
         for (int i = 0; i < aWidth - aText.length(); i++)
