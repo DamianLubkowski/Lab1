@@ -6,12 +6,14 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int num1 = 0, num2 = 0;
+        Integer num1 = 0, num2 = 0;
 
         do {
             System.out.print("Podaj liczbę, którą mam dodać: ");
             num1 = input.nextInt();
+            System.out.printf("DEC = %d, BIN = %s, HEX = %s%n", num1, Integer.toBinaryString(num1), Integer.toHexString(num1));
             num2 = input.nextInt();
+            System.out.printf("DEC = %d, BIN = %s, HEX = %s%n", num2, Integer.toBinaryString(num2), Integer.toHexString(num2));
             if ((num1 == 0) || (num2 == 0)) break;
             System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
         } while (true);
