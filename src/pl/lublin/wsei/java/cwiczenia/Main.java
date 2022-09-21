@@ -3,8 +3,13 @@ package pl.lublin.wsei.java.cwiczenia;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.printf("alfa\tsin(alfa)\n");
-        for (int i = 0; i < 370; i+=10)
-            System.out.printf("%d\t%f\t\n", i, Math.sin(i/360.0*2*Math.PI));
+        System.out.printf("arg\tlog2(arg)\tsum(arg)\n");
+
+        int sum = 0;
+
+        for (int i = 1; i <= 2048; i*=2) {
+            sum += i;
+            System.out.printf("%d\t%.0f\t%d\n", i, Math.log(i) / Math.log(2), sum);
+        }
     }
 }
