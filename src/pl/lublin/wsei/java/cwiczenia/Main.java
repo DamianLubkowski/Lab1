@@ -1,29 +1,29 @@
 package pl.lublin.wsei.java.cwiczenia;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
-    private static String leftPad(String aText, char aChar, int aWidth)
-    {
-        String res = aText;
-        for (int i = 0; i < aWidth - aText.length(); i++)
-            res = aChar + res;
-        return res;
-    }
-
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        Integer num1 = 0, num2 = 0;
+        int[] liczby = new int[30];
+        Random rnd = new Random();
 
-        do {
-            System.out.print("Podaj liczbę, którą mam dodać: ");
-            num1 = input.nextInt();
-            System.out.printf("DEC = %d, BIN = %s, HEX = %s%n", num1, leftPad(Integer.toBinaryString(num1), '0', 4), leftPad(Integer.toHexString(num1), '0', 4).toUpperCase());
-            num2 = input.nextInt();
-            System.out.printf("DEC = %d, BIN = %s, HEX = %s%n", num2, leftPad(Integer.toBinaryString(num2), '0', 4), leftPad(Integer.toHexString(num2), '0', 4).toUpperCase());
-            if ((num1 == 0) || (num2 == 0)) break;
-            System.out.printf("Wynik dodawania %d + %d = %d%n", num1, num2, num1 + num2);
-        } while (true);
+        for(int i = 0; i < 30; i++)
+            liczby[i] = rnd.nextInt();
+
+        int mx = Integer.MIN_VALUE;
+        int mn = Integer.MAX_VALUE;
+
+        long avg = 0;
+
+        for (int l : liczby)
+        {
+            System.out.println(l);
+            if (l < mn) mn = l;
+            if (l > mx) mx = l;
+            avg += l;
+        }
+        System.out.printf("MIN = %d, MAX = %d, AVG = %f", mn, mx, (float)avg/liczby.length);
     }
 }
